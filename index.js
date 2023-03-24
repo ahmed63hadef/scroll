@@ -9,11 +9,16 @@
 const navbarre = document.getElementById("navbar");
 let u = 0;
 let scroll = window.scrollY;
-
 console.log(scroll);
 
+navbarre.style.top = 0;
+
 window.addEventListener("scroll", (e) => {
-  if (window.scrollY < window.scrollY - 1) {
-    navbarre.style.top = 0 + "px";
+  if (window.scrollY < u) {
+    navbarre.style.top = 0;
+  } else {
+    navbarre.style.top = "-60px";
   }
+
+  u = window.scrollY;
 });
